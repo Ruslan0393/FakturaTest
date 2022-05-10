@@ -1,6 +1,7 @@
 ﻿using FakturaTest.Service.DTOs;
 using FakturaTest.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace FakturaTest.Controllers
@@ -17,6 +18,7 @@ namespace FakturaTest.Controllers
 
         public IActionResult Index(string max, string min, string sort)
         {
+          
             ViewCarDto cars = new ViewCarDto();
             cars.Cars = carService.GetAll(max:max, min:min, sort:sort);
             return View(cars);

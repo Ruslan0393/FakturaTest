@@ -29,6 +29,7 @@ namespace FakturaTest.Data.Repository
         public void Delete(Expression<Func<Car, bool>> expression)
         {
             var resalt = db.Cars.FirstOrDefault(expression);
+
             db.Cars.Remove(resalt);
             db.SaveChanges();
         }
